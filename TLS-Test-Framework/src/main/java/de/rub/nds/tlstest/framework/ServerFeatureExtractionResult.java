@@ -56,12 +56,28 @@ public class ServerFeatureExtractionResult extends FeatureExtractionResult {
 
         LOGGER.info(extractionResult.getSupportedSignatureAndHashAlgorithmsSke());
         LOGGER.info(serverReport.getSupportedSignatureAndHashAlgorithmsSke());
-        extractionResult
-                // TODO:: FERRE
-                // serverReport.get...() null: suggests the server scan failed to detect any 
-                // supported signature algorithms during the TLS handshake
-                .getSupportedSignatureAndHashAlgorithmsSke()
-                .addAll(serverReport.getSupportedSignatureAndHashAlgorithmsSke());
+        Collection<SignatureAndHashAlgorithm> skeAlgorithms = 
+            serverReport.getSupportedSignatureAndHashAlgorithmsSke();
+        
+        if (skeAlgorithms != null) {
+            extractionResult.getSupportedSignatureAndHashAlgorithmsSke()
+                           .addAll(skeAlgorithms);
+        } else {
+            LOGGER.warn("No signature algorithms detected in server scan. Continuing...");
+            // Optionally add default algorithms if appropriate for your use case
+            // extractionResult.getSupportedSignatureAndHashAlgorithmsSke()
+            //                .addAll(getDefaultSignatureAlgorithms());
+        }
+        // extractionResult
+        //         // TODO:: FERRE
+        //         .getSupportedSignatureAndHashAlgorithmsSke()
+        //         .addAll(serverReport.getSupportedSignatureAndHashAlgorithmsSke());
+        //             // serverReport.getSupportedSignatureAndHashAlgorithmsSke() --> returns null
+
+
+
+
+
         extractionResult.setConfigProfileIdentifier(serverReport.getConfigProfileIdentifier());
         extractionResult.setConfigProfileIdentifierTls13(
                 serverReport.getConfigProfileIdentifierTls13());
