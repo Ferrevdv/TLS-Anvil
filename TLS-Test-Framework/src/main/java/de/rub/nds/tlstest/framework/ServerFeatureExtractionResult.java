@@ -13,7 +13,12 @@ import de.rub.nds.tlsscanner.serverscanner.probe.namedgroup.NamedGroupWitness;
 import de.rub.nds.tlsscanner.serverscanner.report.ServerReport;
 import java.util.*;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ServerFeatureExtractionResult extends FeatureExtractionResult {
+
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private Set<ExtensionType> negotiableExtensions = new HashSet<>();
     private Map<NamedGroup, NamedGroupWitness> namedGroupWitnesses = new HashMap<>();
@@ -47,7 +52,14 @@ public class ServerFeatureExtractionResult extends FeatureExtractionResult {
         extractionResult.setNamedGroupWitnesses(serverReport.getSupportedNamedGroupsWitnesses());
         extractionResult.setNamedGroupWitnessesTls13(
                 serverReport.getSupportedNamedGroupsWitnessesTls13());
+
+
+        LOGGER.info(extractionResult.getSupportedSignatureAndHashAlgorithmsSke());
+        LOGGER.info(serverReport.getSupportedSignatureAndHashAlgorithmsSke());
         extractionResult
+                // TODO:: FERRE
+                // serverReport.get...() null: suggests the server scan failed to detect any 
+                // supported signature algorithms during the TLS handshake
                 .getSupportedSignatureAndHashAlgorithmsSke()
                 .addAll(serverReport.getSupportedSignatureAndHashAlgorithmsSke());
         extractionResult.setConfigProfileIdentifier(serverReport.getConfigProfileIdentifier());
