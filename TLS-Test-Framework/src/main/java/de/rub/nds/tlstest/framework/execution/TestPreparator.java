@@ -312,57 +312,57 @@ public class TestPreparator {
 
         // TODO: FERRE
         // Log basic properties
-        LOGGER.debug("Host: {}", serverReport.getHost());
-        LOGGER.debug("Port: {}", serverReport.getPort());
-        LOGGER.debug("Server is alive: {}", serverReport.getServerIsAlive());
-        LOGGER.debug("Speaks protocol: {}", serverReport.getSpeaksProtocol());
-        LOGGER.debug("Is handshaking: {}", serverReport.getIsHandshaking());
+        LOGGER.info("Host: {}", serverReport.getHost());
+        LOGGER.info("Port: {}", serverReport.getPort());
+        LOGGER.info("Server is alive: {}", serverReport.getServerIsAlive());
+        LOGGER.info("Speaks protocol: {}", serverReport.getSpeaksProtocol());
+        LOGGER.info("Is handshaking: {}", serverReport.getIsHandshaking());
 
-        // Log score and rating
-        LOGGER.debug("Score: {}", serverReport.getScore());
-        LOGGER.debug("Score report: {}", serverReport.getScoreReport());
+        // Log info and rating
+        LOGGER.info("Score: {}", serverReport.getScore());
+        LOGGER.info("Score report: {}", serverReport.getScoreReport());
 
-        // Log config profiles
-        LOGGER.debug("Config profile identifier: {}", serverReport.getConfigProfileIdentifier());
-        LOGGER.debug("Config profile identifier TLS 1.3: {}", serverReport.getConfigProfileIdentifierTls13());
+        // Log infog profiles
+        LOGGER.info("Config profile identifier: {}", serverReport.getConfigProfileIdentifier());
+        LOGGER.info("Config profile identifier TLS 1.3: {}", serverReport.getConfigProfileIdentifierTls13());
 
-        // Log various TLS properties
-        LOGGER.debug("MAC check pattern AppData: {}", serverReport.getMacCheckPatternAppData());
-        LOGGER.debug("Verify check pattern: {}", serverReport.getVerifyCheckPattern());
-        LOGGER.debug("Cookie length: {}", serverReport.getCookieLength());
-        LOGGER.debug("GCM pattern: {}", serverReport.getGcmPattern());
-        LOGGER.debug("Handshake successful counter: {}", serverReport.getHandshakeSuccessfulCounter());
-        LOGGER.debug("Handshake failed counter: {}", serverReport.getHandshakeFailedCounter());
-        LOGGER.debug("Connection insecure counter: {}", serverReport.getConnectionInsecureCounter());
-        LOGGER.debug("MAC check pattern Finished: {}", serverReport.getMacCheckPatternFinished());
+        // Log infous TLS properties
+        LOGGER.info("MAC check pattern AppData: {}", serverReport.getMacCheckPatternAppData());
+        LOGGER.info("Verify check pattern: {}", serverReport.getVerifyCheckPattern());
+        LOGGER.info("Cookie length: {}", serverReport.getCookieLength());
+        LOGGER.info("GCM pattern: {}", serverReport.getGcmPattern());
+        LOGGER.info("Handshake successful counter: {}", serverReport.getHandshakeSuccessfulCounter());
+        LOGGER.info("Handshake failed counter: {}", serverReport.getHandshakeFailedCounter());
+        LOGGER.info("Connection insecure counter: {}", serverReport.getConnectionInsecureCounter());
+        LOGGER.info("MAC check pattern Finished: {}", serverReport.getMacCheckPatternFinished());
 
-        // Log security headers
-        LOGGER.debug("HSTS max age: {}", serverReport.getHstsMaxAge());
-        LOGGER.debug("HPKP max age: {}", serverReport.getHpkpMaxAge());
+        // Log infoity headers
+        LOGGER.info("HSTS max age: {}", serverReport.getHstsMaxAge());
+        LOGGER.info("HPKP max age: {}", serverReport.getHpkpMaxAge());
 
-        // Log cryptographic properties
-        LOGGER.debug("Weakest DH strength: {}", serverReport.getWeakestDhStrength());
-        LOGGER.debug("Common DH values: {}", serverReport.getCommonDhValues());
+        // Log infoographic properties
+        LOGGER.info("Weakest DH strength: {}", serverReport.getWeakestDhStrength());
+        LOGGER.info("Common DH values: {}", serverReport.getCommonDhValues());
 
-        // Log test results
-        LOGGER.debug("Invalid curve test result list: {}", serverReport.getInvalidCurveTestResultList());
-        LOGGER.debug("Raccoon attack probabilities: {}", serverReport.getRaccoonAttackProbabilities());
-        LOGGER.debug("Raccoon test result list: {}", serverReport.getRaccoonTestResultList());
-        LOGGER.debug("Bleichenbacher test result list: {}", serverReport.getBleichenbacherTestResultList());
+        // Log inforesults
+        LOGGER.info("Invalid curve test result list: {}", serverReport.getInvalidCurveTestResultList());
+        LOGGER.info("Raccoon attack probabilities: {}", serverReport.getRaccoonAttackProbabilities());
+        LOGGER.info("Raccoon test result list: {}", serverReport.getRaccoonTestResultList());
+        LOGGER.info("Bleichenbacher test result list: {}", serverReport.getBleichenbacherTestResultList());
 
-        // Log HPKP pins
-        LOGGER.debug("Normal HPKP pins: {}", serverReport.getNormalHpkpPins());
-        LOGGER.debug("Report only HPKP pins: {}", serverReport.getReportOnlyHpkpPins());
+        // Log infopins
+        LOGGER.info("Normal HPKP pins: {}", serverReport.getNormalHpkpPins());
+        LOGGER.info("Report only HPKP pins: {}", serverReport.getReportOnlyHpkpPins());
 
-        // Log client simulation results
-        LOGGER.debug("Simulated clients result list: {}", serverReport.getSimulatedClientsResultList());
+        // Log infot simulation results
+        LOGGER.info("Simulated clients result list: {}", serverReport.getSimulatedClientsResultList());
 
-        // Log application protocols
-        LOGGER.debug("Supported application protocols: {}", serverReport.getSupportedApplicationProtocols());
+        // Log infocation protocols
+        LOGGER.info("Supported application protocols: {}", serverReport.getSupportedApplicationProtocols());
 
-        // Log named groups
-        LOGGER.debug("Supported named groups witnesses: {}", serverReport.getSupportedNamedGroupsWitnesses());
-        LOGGER.debug("Supported named groups witnesses TLS 1.3: {}", serverReport.getSupportedNamedGroupsWitnessesTls13());
+        // Log info groups
+        LOGGER.info("Supported named groups witnesses: {}", serverReport.getSupportedNamedGroupsWitnesses());
+        LOGGER.info("Supported named groups witnesses TLS 1.3: {}", serverReport.getSupportedNamedGroupsWitnessesTls13());
 
         // TODO: here we fail
         FeatureExtractionResult report =
